@@ -1,0 +1,21 @@
+def printHello():
+    print("Good morning.")
+    print("Have a happy sunndy day!")
+
+
+printHello()
+
+
+def print_hello(name):
+    print(f'Good morning, {name}')
+
+    print_hello("Jason")
+    print_hello("Megan")
+    print("")
+
+
+
+celsius = float(input("Enter a Celsius temperature: "))
+fahrenheit = (9/5)*(celsius) + 32
+
+print(f"The celsius temperature {celsius} is {fahrenheit:.2f} degrees")

@@ -1,0 +1,28 @@
+def even_words():
+    string2 = string1.split()
+    print(string2)
+    for word in string2:
+        if len(word) % 2 == 0:
+            print(f"Even string: {word}")
+
+string1 = input("Enter a string: ")
+even_words()
+
+
+def arith(num1, num2):
+    total = num1 + num2
+    diff = num1 - num2
+    return total, diff
+
+
+
+print(f"File1 {__name__ = }")
+
+
+
+def main():
+    print("Python programming is fun!")
+
+if __name__ == "__main__":
+    print(__name__)
+    main()

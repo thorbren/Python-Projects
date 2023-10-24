@@ -1,0 +1,55 @@
+import math
+num = math.pi
+
+print(f"Using Numeric {num = }")
+print(f"|{num:25}|")
+print(f"|{num:<25}|")
+print(f"|{num:>25}|")
+print(f"|{num:^25}|")
+
+
+string = "Python 3.10"
+print(f"Using String {string = }")
+print(f"|{string:25}|")
+print(f"|{string:<25}|")
+print(f"|{string:>25}|")
+print(f"|{string:^25}|")
+
+
+variable = "Python 3.10"
+print(f"Using String {variable = }")
+print(f"|{variable:=<25}|")
+print(f"|{variable:=>25}|")
+print(f"|{variable:=^25}|")
+
+
+variable = 1200356.8796
+print(f"Using Numeric {variable = }")
+print(f"With two decimal places: {variable:.2f}")
+print(f"With three decimal places: {variable:.3f}")
+print(f"With two decimal places and a comma: {variable:,.2f}")
+print(f"With a forced plus sign: {variable:+,.2f}")
+print(f"With two decimal places ${variable:,.2f}\n")
+
+
+print(f'Number    Square    Cube')
+for x in range(1,12):
+    print(f'{x:2d}         {x*x:3d}        {x*x*x:4d}')
+
+print()
+for x in range(7,1000):
+    print(f'{x:2d}{x/7:17.4f}')
+
+
+number = 8.75
+
+print(f"This is a string with a \t tab")
+print(fr"This is also a string with a \t tab")
+print(f"I am \U0001F60A")
+print(fr"I am \U0001F60A")
+
+
+print(f'Inches                Meters               Kilometers')
+print(f'=' * 80)
+for x in range(1,101):
+    print(f'{x:3.2f}{x*39.67:30.2f}{1000*(x*39.67):30,.2f}')

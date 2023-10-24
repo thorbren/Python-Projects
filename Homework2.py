@@ -1,0 +1,91 @@
+"""
+Class: CS230--Section 3
+Name: Taice Brenner
+Description: Homework 2
+I pledge that I have completed the programming assignment
+independently.
+I have not copied the code from a student or any source.
+I have not given my code to any student.
+"""
+
+# Below are the variables defined and the title of the program, which lists the available options for the user.
+term = float()
+apy = float()
+interestRate = float()
+compounding = 0
+minimumDeposit = 25000
+
+print("=" * 20, " Welcome to Bank Bentley ", "=" * 20)
+print("\nAvailable CD Terms: \n1. 6 month CD\n2. 9 month CD\n3. 12 month CD")
+
+# The while True statement checks that the inputs are valid and sets the parameters for the upcoming calculations.
+while True:
+    cdTerm = int((input("Enter the number corresponding to your CD term: ")))
+    if cdTerm == 1:
+        term = "6 Month CD"
+        time = 0.5
+        month = 6
+        apy = 5.05
+        interestRate = 5.00
+        compounding = "Simple"
+        break
+    elif cdTerm == 2:
+        term = "9 Month CD"
+        time = 0.75
+        month = 9
+        apy = 5.27
+        interestRate = 5.25
+        compounding = "Simple"
+        break
+    elif cdTerm == 3:
+        term = "12 Month CD"
+        time = 1
+        month = 12
+        apy = 5.11
+        interestRate = 5.00
+        compounding = "Monthly"
+        break
+    else:
+        print("Please enter a valid CD term choice (1, 2, or 3).")
+
+# The while True statement checks that the deposit amount is valid.
+while True:
+    deposit = float((input("Enter the deposit amount (minimum $2500): $")))
+    if deposit >= 2500:
+        break
+    else:
+        print("Minimum opening deposit is $2,500. Please enter a valid amount.")
+
+# The following print statements print the user's inputs.
+print(f"\n{'CD Term:':15s}", term)
+print(f"{'APY:':15s} {apy:.2f}%")
+print(f"{'Interest Rate:':15s} {interestRate:.2f}%")
+print(f"\nMethod of Compounding: {compounding:^17}")
+print(f"Initial Deposit Amount: \t${deposit:\t^8.2f}")
+
+print(f"\n{'Month':^16}|{'Amount':^16}|{'Interest Earned':^16}|{'Total Value':^16}|{'Total Interest':^16}")
+print('-' * 88)
+
+# Below are the variables and equations for the interest calculations.
+interestPercent = interestRate / 100
+apyPercent = apy / 100
+interestEarned = (deposit * interestPercent * time) / month
+totalInterest = 0
+monthlyInterest = (apyPercent * deposit) / 12
+totalValue = deposit
+
+# The for loop calculates the interest based on the user's inputs and formats the results into a table.
+for i in range(1, month + 1):
+        if cdTerm == 1 or 2:
+            totalInterest += interestEarned
+            amount = deposit + totalInterest
+            totalValue += interestEarned
+            print(f"{i:^16}| ${amount:>13.2f} | ${interestEarned:>13.2f} | ${totalValue:>13.2f} | ${totalInterest:>13.2f}")
+        else:
+            monthlyInterest = (apyPercent * totalValue) / 12
+            amount = deposit + monthlyInterest
+            totalInterest += monthlyInterest
+            totalValue += monthlyInterest
+            print(f"{i:^16}| ${totalValue:>13.2f} | ${monthlyInterest:>13.2f} | ${totalValue:>13.2f} | ${totalInterest:>13.2f}")
+
+print(f"\nCD Value at Maturity: $\t\t\t{totalValue:.2f}")
