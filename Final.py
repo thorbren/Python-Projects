@@ -5,7 +5,6 @@ import streamlit as st
 import plotly.express as px
 import numpy as np
 
-#streamlit run C:\Users\taice\OneDrive\PyCharmProjects\FirstClass\venv\Final.py
 bikes = pd.read_csv("venv/bikes.csv")
 stations = pd.read_csv("venv/current_bluebikes_stations (1).csv")
 
